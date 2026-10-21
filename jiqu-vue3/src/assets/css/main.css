@@ -1,0 +1,221 @@
+/* =====================================================
+   集趣·潮流社区 全局设计体系 —— 暗黑潮流风
+   ===================================================== */
+
+:root {
+  /* 色彩 */
+  --bg-primary: #0f0f12;
+  --bg-secondary: #141419;
+  --card: #1a1a20;
+  --card-hover: #232330;
+  --border: #2a2a32;
+  --border-hover: #3a3a44;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #ff4d00;
+  --accent-light: #ff8a3d;
+  --accent-deep: #ff3d3d;
+  --accent-gradient: linear-gradient(135deg, #ff8a3d 0%, #ff4d00 55%, #ff3d3d 100%);
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  /* 圆角 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* 阴影 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 24px rgba(255, 77, 0, 0.35);
+
+  /* 字体 */
+  --font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', system-ui, sans-serif;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --font-bold: 700;
+  --font-black: 900;
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+
+  /* 布局 */
+  --container-max: 1200px;
+  --navbar-height: 64px;
+  --z-navbar: 100;
+  --z-dropdown: 1000;
+  --z-overlay: 2000;
+
+  /* 滚动条 */
+  --scrollbar-thumb: #2a2a32;
+  --scrollbar-track: transparent;
+}
+
+html,
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+a {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+/* 暗色滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+::selection {
+  background: rgba(255, 77, 0, 0.35);
+}
+
+/* =====================================================
+   Element Plus 暗色主题覆盖（必须 html.dark 前缀才生效）
+   ===================================================== */
+html.dark {
+  --el-color-primary: #ff4d00;
+  --el-color-primary-light-3: #ff6a2b;
+  --el-color-primary-light-5: #ff8a3d;
+  --el-color-primary-light-7: #ffb98f;
+  --el-color-primary-light-8: #ffd9c2;
+  --el-color-primary-light-9: #3a1a10;
+  --el-color-primary-dark-2: #e04400;
+  --el-bg-color: #1a1a20;
+  --el-bg-color-overlay: #232330;
+  --el-fill-color-blank: #1a1a20;
+  --el-fill-color-light: #1a1a20;
+  --el-fill-color-lighter: #141419;
+  --el-text-color-primary: #f5f5f7;
+  --el-text-color-regular: #a1a1aa;
+  --el-text-color-secondary: #71717a;
+  --el-border-color: #2a2a32;
+  --el-border-color-light: #232330;
+  --el-border-color-lighter: #232330;
+  --el-mask-color: rgba(0, 0, 0, 0.6);
+  --el-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --el-box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --el-mask-color-extra-light: rgba(20, 20, 25, 0.9);
+}
+
+/* 抢购全屏遮罩 */
+.drop-overlay {
+  z-index: 5000 !important;
+  backdrop-filter: blur(6px);
+  background: rgba(10, 10, 14, 0.7) !important;
+}
+.drop-overlay .el-loading-spinner {
+  padding: 24px 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(26, 26, 32, 0.92);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+.drop-overlay .el-loading-spinner .circular {
+  width: 56px;
+  height: 56px;
+  border-width: 5px;
+}
+.drop-overlay .el-loading-spinner .path {
+  stroke: var(--accent);
+  opacity: 1;
+}
+.drop-overlay .el-loading-text {
+  margin-top: 12px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 路由过渡 */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* 通用工具类 */
+.jq-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(255, 77, 0, 0.25);
+}
+.jq-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: var(--shadow-glow);
+}
+.jq-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.jq-btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+.jq-btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  box-shadow: none;
+  filter: none;
+}

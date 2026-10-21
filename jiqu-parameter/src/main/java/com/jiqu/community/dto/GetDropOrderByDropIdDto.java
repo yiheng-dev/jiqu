@@ -1,0 +1,24 @@
+package com.jiqu.community.dto;
+
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.io.Serial;
+import java.io.Serializable;
+
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+public class GetDropOrderByDropIdDto implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+    
+    /**
+     * 优惠券id
+     */
+    @NotNull
+    private Long dropId;
+
+}
