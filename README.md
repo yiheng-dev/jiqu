@@ -2,6 +2,20 @@
 
 一个基于 Spring Boot 3 + Redis + Kafka + Spring AI 的潮流社区与限量发售平台。
 
+## 效果预览
+
+| 首页 | 潮流店铺 |
+| :---: | :---: |
+| ![首页](docs/screenshots/index.png) | ![潮流店铺](docs/screenshots/store-list.png) |
+
+| 店铺详情 | 发售日历 |
+| :---: | :---: |
+| ![店铺详情](docs/screenshots/store-detail.png) | ![发售日历](docs/screenshots/drop-list.png) |
+
+| AI 助手 | 登录 |
+| :---: | :---: |
+| ![AI 助手](docs/screenshots/ai-assistant.png) | ![登录](docs/screenshots/login.png) |
+
 ## 项目结构
 
 ```text
